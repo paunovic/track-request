@@ -1,0 +1,21 @@
+[project]
+name = "track-request"
+version = "0.1.0"
+description = "trace a request through a serverless stack: lambda and batch invocations as one tree"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = ["botocore"]
+
+[project.scripts]
+track-request = "track_request:main"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["track_request"]
