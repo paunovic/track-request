@@ -13,7 +13,7 @@ whole tree, with durations, memory, log counts and errors per node:
 
 queries cloudwatch insights for the request's logs, reads the aws sdk debug lines
 to find every lambda invocation and batch submission in them, fetches those requests too,
-and recurses - maxdepth levels deep, 10 by default, 0 for unlimited.
+and recurses.
 
 ## usage
 
