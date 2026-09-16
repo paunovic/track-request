@@ -1,6 +1,6 @@
 # track-request
 
-follow one request through a serverless stack: which lambdas it
+Follow one request through a serverless stack: which lambdas it
 invoked, which batch jobs it submitted, what each printed - the
 whole tree, with durations, memory, log counts and errors per node:
 
@@ -11,11 +11,11 @@ whole tree, with durations, memory, log counts and errors per node:
         /aws/batch/job/default/7f3e5a (12.40s, ?/2048 MB, 55 lines, 0 errors, 0 subrequests)
       /aws/lambda/send-email 91dd02 (0.31s, 84/512 MB, 12 lines, 0 errors, 0 subrequests)
 
-queries cloudwatch insights for the request's logs, reads the aws sdk debug lines
+Queries cloudwatch insights for the request's logs, reads the aws sdk debug lines
 to find every lambda invocation and batch submission in them, fetches those requests too,
 and recurses.
 
-## usage
+## Usage
 
     usage: track-request [-h] [-v] [-f FORMAT] [-o OUTPUT] [-d DAYS]
                          [-l LIMIT] [-m MAXDEPTH]
@@ -27,9 +27,9 @@ and recurses.
 - `-l LIMIT` - stop after this many log lines per request
 - `-m MAXDEPTH` - traversal depth, 0 for unlimited
 
-## install
+## Install
 
-a python package with a single dependency, botocore, on python 3.10 or newer:
+A python package with a single dependency, botocore, on python 3.10 or newer:
 
     uv tool install git+https://github.com/paunovic/track-request.git
 
