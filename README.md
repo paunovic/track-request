@@ -1,8 +1,8 @@
 # track-request
 
-Follow one request through a serverless stack: which lambdas it
-invoked, which batch jobs it submitted, what each printed - the
-whole tree, with durations, memory, log counts and errors per node:
+Follow one request through a serverless stack: every lambda it
+invoked, every batch job it submitted, the whole tree with
+durations, memory and errors per node:
 
     $ track-request /aws/lambda/api-prod 8f6e1b
 
@@ -11,9 +11,9 @@ whole tree, with durations, memory, log counts and errors per node:
         /aws/batch/job/default/7f3e5a (12.40s, ?/2048 MB, 55 lines, 0 errors, 0 subrequests)
       /aws/lambda/send-email 91dd02 (0.31s, 84/512 MB, 12 lines, 0 errors, 0 subrequests)
 
-Queries cloudwatch insights for the request's logs, reads the aws sdk debug lines
-to find every lambda invocation and batch submission in them, fetches those requests too,
-and recurses.
+Queries cloudwatch insights for the request logs, finds lambda
+invocations and batch submissions in the aws sdk debug lines,
+fetches those too, recurses.
 
 ## Usage
 
